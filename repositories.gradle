@@ -7,8 +7,20 @@ repositories {
         allowInsecureProtocol
     }
     maven {
+        name 'gt'
+        url 'https://gregtech.mechaenetia.com/'
+    }
+    maven {
+        name 'jitpack'
+        url 'https://jitpack.falsepattern.com/'
+    }
+    maven {
+        name 'mavenpattern'
+        url 'https://maven.falsepattern.com/'
+    }
+    maven {
         name 'ic2'
-        url 'http://maven.ic2.player.to/'
+        url 'https://maven.ic2.player.to/'
         metadataSources {
             mavenPom()
             artifact()

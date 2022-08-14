@@ -106,7 +106,7 @@ public final class Config {
     public static boolean allowExternalTickSpeedup = true;
     public static boolean crateSyntheticRecipes = true;
 
-    public static boolean useSteelInChassi = false;
+    public static boolean useSteelInChassi = true;
 
     public static boolean detailedPowerTrackingEnabled = false;
 

@@ -1,13 +1,31 @@
 // Add your dependencies here
+def deobfCurse(curseDep) {
+    String curseMaven = "https://cursemaven.com/" //Use https://cursemaven.falsepattern.com/ if this is down
+    return deobfMaven(curseMaven, curse(curseDep))
+}
+
+static def curse(curseDep) {
+    return "curse.maven:" + curseDep
+}
+
+def deobfMaven(String repoURL, String mavenDep) {
+    if (!repoURL.endsWith("/")) {
+        repoURL += "/"
+    }
+    String[] parts = mavenDep.split(":")
+    parts[0] = parts[0].replace('.', '/')
+    def jarURL = repoURL + parts[0] + "/" + parts[1] + "/" + parts[2] + "/" + parts[1] + "-" + parts[2] + ".jar"
+    return deobf(jarURL)
+}
 
 dependencies {
     compile('com.github.GTNewHorizons:EnderCore:0.2.9:dev')
-    compile('com.github.GTNewHorizons:ForestryMC:4.4.6:dev')
+    compile('com.github.GTNewHorizons:ForestryMC:4.4.10:dev')
     compile('com.github.GTNewHorizons:NotEnoughItems:2.2.15-GTNH:dev')
     compile('com.github.GTNewHorizons:BuildCraft:7.1.27:dev')
     compile('curse.maven:cofh-lib-220333:2388748') // https://www.curseforge.com/minecraft/mc-mods/cofh-lib/files/2388748
     shadowImplementation('cglib:cglib-nodep:3.3.0')
-
+    //compile(curse("et-futurum-requiem-441392:3863343"))
     compileOnly('com.github.GTNewHorizons:waila:1.5.19:api') {transitive = false}
     compileOnly('com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-85-GTNH:api') {transitive = false}
     compileOnly('com.github.GTNewHorizons:Baubles:1.0.1.14:dev') {transitive = false}

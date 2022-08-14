@@ -8,6 +8,7 @@ import static crazypants.enderio.power.Capacitors.*;
 import static crazypants.util.RecipeUtil.*;
 
 import com.enderio.core.common.util.OreDictionaryHelper;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.config.Config;
@@ -33,6 +34,12 @@ public class MaterialRecipes {
                 powder.setRegistered();
             }
         }
+
+      if(Loader.isModLoaded("etfuturum")){
+        OreDictionary.registerOre("totemicItem", GameRegistry.findItem("etfuturum", "totem_of_undying"));
+      }else{
+        OreDictionary.registerOre("totemicItem", new ItemStack(Items.golden_apple, 1, 1));
+      }
     }
 
     public static void registerOresInDictionary() {
@@ -159,7 +166,7 @@ public class MaterialRecipes {
         String capacitorMelodic = Capacitors.MELODIC_CAPACITOR.getOreTag();
 
         String ingotCopper =
-                OreDictionary.doesOreNameExist("ingotCopper") && Config.useModMetals ? "ingotCopper" : "ingotIron";
+          (OreDictionary.doesOreNameExist("ingotCopper") || Loader.isModLoaded("etfuturum")) && Config.useModMetals ? "ingotCopper" : "ingotIron";
 
         // Capacitors
         if (Config.useHardRecipes) {
@@ -526,7 +533,7 @@ public class MaterialRecipes {
         ItemStack enderios = EnderFood.ENDERIOS.getStack();
         addShapeless(enderios, Items.bowl, Items.milk_bucket, "cropWheat", "dustEnderPearl");
 
-        if (hasCopper()) {
+        if (hasCopper() || Loader.isModLoaded("etfuturum")) {
             ItemStack dustCopper = new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_COPPER.ordinal());
             ItemStack ingotCoppper = OreDictionaryPreferences.instance.getPreferred(OreDictionaryHelper.INGOT_COPPER);
             GameRegistry.addSmelting(dustCopper, ingotCoppper, 0);
@@ -535,6 +542,17 @@ public class MaterialRecipes {
             ItemStack dustTin = new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_TIN.ordinal());
             ItemStack ingotTin = OreDictionaryPreferences.instance.getPreferred(OreDictionaryHelper.INGOT_TIN);
             GameRegistry.addSmelting(dustTin, ingotTin, 0);
+        }
+        if (OreDictionary.getOres("ingotSteel").isEmpty()) {
+          ItemStack dustDarkSteel = new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_DARK_STEEL.ordinal());
+          ItemStack dustElectricalSteel = new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_ELECTRICAL_STEEL.ordinal());
+          ItemStack ingotDarkSteel = new ItemStack(EnderIO.itemAlloy, 1, Alloy.DARK_STEEL.ordinal());
+          ItemStack ingotElectricalSteel = new ItemStack(EnderIO.itemAlloy, 1, Alloy.ELECTRICAL_STEEL.ordinal());
+
+          addShapeless(dustDarkSteel, Items.iron_ingot, "dustCoal", "dustObsidian", "dustObsidian", "dustObsidian", "dustObsidian");
+          addShapeless(dustElectricalSteel, Items.iron_ingot, "dustCoal", "dustSilicon");
+          GameRegistry.addSmelting(dustDarkSteel, ingotDarkSteel, 0);
+          GameRegistry.addSmelting(dustElectricalSteel, ingotElectricalSteel, 0);
         }
     }
 }

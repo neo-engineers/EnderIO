@@ -64,8 +64,7 @@
   <recipeGroup name="EnderIO" > <!-- Required for EnderIO to function correctly. -->
     <recipe name="Electrical Steel" energyCost="10000" >
       <input>
-        <itemStack modID="minecraft" itemName="iron_ingot" />
-        <itemStack oreDictionary="dustCoal" />
+        <itemStack oreDictionary="ingotSteel" />
         <itemStack oreDictionary="itemSilicon" />
       </input>
       <output>
@@ -120,9 +119,8 @@
     </recipe>
     <recipe name="Dark Steel" energyCost="20000" >
       <input>
-        <itemStack modID="minecraft" itemName="iron_ingot" />
-        <itemStack oreDictionary="dustCoal" />
-        <itemStack modID="minecraft" itemName="obsidian" />
+        <itemStack oreDictionary="ingotSteel" />
+        <itemStack oreDictionary="dustObsidian" number="4" />
       </input>
       <output>
         <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="6" exp="0.5" />
@@ -457,7 +455,7 @@
       </output>
     </recipe>
   </recipeGroup>
-  
+
   <vanillaFurnaceRecipes enabled="true" />
 
 </AlloySmelterRecipes>
