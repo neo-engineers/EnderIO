@@ -1,10 +1,20 @@
-make sure copper works with EFR
-add jetpacks based on simply jetpacks
-add drills and saws based on rfdrills
-add a jetplate styled like the one from simply jetpacks for thermal but for EIO chestplates
+add a jetplate styled like the dark soularium one for EIO materials
 add endertech style exchangers based on the ender io exchangers from the exchangers mod in 1.12
 merge in endercore
-merge in ender io addons (or atleast the good parts of it)
 add tiered mekanism gas conduits
-change as many recipes as possible to their 1.12 equivalents with EFR
+make prismarine work with botania versions
 if theres any items from EFR that makes sense in existing recipes change them
+update to falsepattern buildscript
+higher tier capacitor banks
+enhanced machines
+add tier 2 and 4 drills/chainsaws
+move simply jetpacks and rfdrills configs to the EIO config
+replace electric pickaxes and axes with drills/chainsaws?
+remove dependence on cofhcore
+add all "ender io motor"(rfdrill materials) to the itemMaterial item thing
+move all endergy item alloys/grinding balls to the original items
+add dark soularium to itemAlloy
+add leather strap, thrusters, glider wing and flight control units to itemMaterial
+add vivid alloy conduits
+fix english lang
+fix non english langs

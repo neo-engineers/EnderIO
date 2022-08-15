@@ -7,6 +7,7 @@ import static crazypants.enderio.material.endergy.AlloyEndergy.*;
 import static crazypants.util.RecipeUtil.addShaped;
 
 import appeng.api.AEApi;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Optional.Method;
 import cpw.mods.fml.common.registry.GameRegistry;
 import crazypants.enderio.EnderIO;
@@ -567,7 +568,11 @@ public class ConduitRecipes {
         addShaped(bigFilter, "opo", "psp", "opo", 'p', Items.paper, 's', skeletalContractor, 'o', "dustObsidian");
 
         ItemStack bigAdvFilter = new ItemStack(EnderIO.itemBigFilterUpgrade, 1, 1);
-        addShaped(bigAdvFilter, "eme", "mfm", "eme", 'm', melodicAlloy, 'f', bigFilter, 'e', END_STEEL.getOreIngot());
+
+        ItemStack shulkerItem = Loader.isModLoaded("etfuturum")
+                ? new ItemStack(GameRegistry.findItem("etfuturum", "shulker_shell"))
+                : new ItemStack(EnderIO.itemMaterial, 1, PRECIENT_CRYSTAL.ordinal());
+        addShaped(bigAdvFilter, "s", "f", "s", 's', shulkerItem, 'f', bigFilter);
 
         ItemStack modFilter = new ItemStack(EnderIO.itemModItemFilter, 1, 0);
         addShaped(modFilter, " p ", "pwp", " p ", 'p', Items.paper, 'w', EnderIO.itemYetaWench);

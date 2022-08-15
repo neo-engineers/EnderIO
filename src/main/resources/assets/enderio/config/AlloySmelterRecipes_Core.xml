@@ -410,7 +410,7 @@
     <recipe name="Melodic Alloy" energyCost="20000" >
       <input>
         <itemStack oreDictionary="ingotEndSteel" />
-        <itemStack oreDictionary="pearlEnderEye" />
+        <itemStack oreDictionary="poppedItem" />
       </input>
       <output>
         <itemStack oreDictionary="ingotMelodicAlloy" number="1" exp="1" />

@@ -5,10 +5,10 @@
   "description": "Compact conduits, painted things and access to your stuff through an eye of ender.",
   "version": "${modVersion}",
   "mcversion": "${minecraftVersion}",
-  "url": "http://enderio.com",
+  "url": "",
   "updateUrl": "",
-  "authorList": [ "CrazyPants", "tterrag" ],
-  "credits": "By CrazyPants, with the help of many",
+  "authorList": [ "UnixSupremacist" ],
+  "credits": "Team CoFH, Gregtech New Horizons, Volodya2501, CrazyPants, tterrag, goldenapple, tonius11, Pathaleon, sk89q, Cybercat, dand0, nabijaczleweli, kevba10, and anyone else who helped making the mod, directly or indirectly",
   "logoFile": "",
   "screenshots": [
   ],

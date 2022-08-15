@@ -1,8 +1,6 @@
 package crazypants.enderio;
 
-import static crazypants.enderio.EnderIO.MODID;
-import static crazypants.enderio.EnderIO.MOD_NAME;
-import static crazypants.enderio.EnderIO.VERSION;
+import static crazypants.enderio.EnderIO.*;
 
 import com.enderio.core.common.Lang;
 import com.enderio.core.common.util.EntityUtil;
@@ -12,15 +10,9 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLInterModComms;
+import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
 import cpw.mods.fml.common.event.FMLInterModComms.IMCMessage;
-import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartedEvent;
-import cpw.mods.fml.common.event.FMLServerStoppedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
@@ -39,11 +31,7 @@ import crazypants.enderio.conduit.geom.ConduitGeometryUtil;
 import crazypants.enderio.conduit.item.ItemExtractSpeedUpgrade;
 import crazypants.enderio.conduit.item.ItemFunctionUpgrade;
 import crazypants.enderio.conduit.item.ItemItemConduit;
-import crazypants.enderio.conduit.item.filter.ItemBasicItemFilter;
-import crazypants.enderio.conduit.item.filter.ItemBigItemFilter;
-import crazypants.enderio.conduit.item.filter.ItemExistingItemFilter;
-import crazypants.enderio.conduit.item.filter.ItemModItemFilter;
-import crazypants.enderio.conduit.item.filter.ItemPowerItemFilter;
+import crazypants.enderio.conduit.item.filter.*;
 import crazypants.enderio.conduit.liquid.ItemLiquidConduit;
 import crazypants.enderio.conduit.me.ItemMEConduit;
 import crazypants.enderio.conduit.oc.ItemOCConduit;
@@ -62,11 +50,7 @@ import crazypants.enderio.fluid.BlockFluidEio;
 import crazypants.enderio.fluid.FluidFuelRegister;
 import crazypants.enderio.fluid.Fluids;
 import crazypants.enderio.fluid.ItemBucketEio;
-import crazypants.enderio.item.ItemConduitProbe;
-import crazypants.enderio.item.ItemEnderFood;
-import crazypants.enderio.item.ItemRecipes;
-import crazypants.enderio.item.ItemSoulVessel;
-import crazypants.enderio.item.ItemYetaWrench;
+import crazypants.enderio.item.*;
 import crazypants.enderio.item.darksteel.DarkSteelItems;
 import crazypants.enderio.item.darksteel.SoundEntity;
 import crazypants.enderio.item.skull.BlockEndermanSkull;
@@ -102,15 +86,7 @@ import crazypants.enderio.machine.obelisk.inhibitor.BlockInhibitorObelisk;
 import crazypants.enderio.machine.obelisk.weather.BlockWeatherObelisk;
 import crazypants.enderio.machine.obelisk.xp.BlockExperienceObelisk;
 import crazypants.enderio.machine.obelisk.xp.ItemXpTransfer;
-import crazypants.enderio.machine.painter.BlockPaintedCarpet;
-import crazypants.enderio.machine.painter.BlockPaintedFence;
-import crazypants.enderio.machine.painter.BlockPaintedFenceGate;
-import crazypants.enderio.machine.painter.BlockPaintedGlowstone;
-import crazypants.enderio.machine.painter.BlockPaintedSlab;
-import crazypants.enderio.machine.painter.BlockPaintedStair;
-import crazypants.enderio.machine.painter.BlockPaintedWall;
-import crazypants.enderio.machine.painter.BlockPainter;
-import crazypants.enderio.machine.painter.PaintSourceValidator;
+import crazypants.enderio.machine.painter.*;
 import crazypants.enderio.machine.power.BlockCapacitorBank;
 import crazypants.enderio.machine.ranged.RangeEntity;
 import crazypants.enderio.machine.reservoir.BlockReservoir;
@@ -129,22 +105,9 @@ import crazypants.enderio.machine.vacuum.BlockVacuumChest;
 import crazypants.enderio.machine.vat.BlockVat;
 import crazypants.enderio.machine.vat.VatRecipeManager;
 import crazypants.enderio.machine.wireless.BlockWirelessCharger;
-import crazypants.enderio.material.Alloy;
-import crazypants.enderio.material.BlockDarkSteelBars;
+import crazypants.enderio.material.*;
 import crazypants.enderio.material.BlockDarkSteelBars.BlockEndSteelBars;
 import crazypants.enderio.material.BlockDarkSteelBars.BlockSoulariumBars;
-import crazypants.enderio.material.BlockFusedQuartz;
-import crazypants.enderio.material.BlockIngotStorage;
-import crazypants.enderio.material.ItemAlloy;
-import crazypants.enderio.material.ItemCapacitor;
-import crazypants.enderio.material.ItemFrankenSkull;
-import crazypants.enderio.material.ItemFusedQuartzFrame;
-import crazypants.enderio.material.ItemGrindingBall;
-import crazypants.enderio.material.ItemMachinePart;
-import crazypants.enderio.material.ItemMaterial;
-import crazypants.enderio.material.ItemPowderIngot;
-import crazypants.enderio.material.MaterialRecipes;
-import crazypants.enderio.material.OreDictionaryPreferences;
 import crazypants.enderio.material.endergy.BlockIngotStorageEndergy;
 import crazypants.enderio.material.endergy.ItemAlloyEndergy;
 import crazypants.enderio.material.endergy.ItemGrindingBallEndergy;
@@ -159,6 +122,7 @@ import crazypants.enderio.teleport.telepad.ItemCoordSelector;
 import crazypants.enderio.thaumcraft.ThaumcraftCompat;
 import crazypants.enderio.tool.EnderIOCrashCallable;
 import crazypants.util.EE3Util;
+import goldenapple.rfdrills.RFDrills;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -174,19 +138,21 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import tonius.simplyjetpacks.SimplyJetpacks;
+import tonius.simplyjetpacks.handler.SyncHandler;
 
 @Mod(
         modid = MODID,
         name = MOD_NAME,
         version = VERSION,
         dependencies =
-                "after:endercore;after:MineFactoryReloaded;after:Forestry;after:Waila@[1.5.8,);after:Thaumcraft;after:appliedenergistics2@[rv2-beta-8,);after:chisel",
+                "after:endercore;after:MineFactoryReloaded;after:Forestry;after:Waila@[1.5.8,);after:Thaumcraft;after:appliedenergistics2@[rv2-beta-8,);after:chisel;after:etfuturum",
         guiFactory = "crazypants.enderio.config.ConfigFactoryEIO")
 public class EnderIO {
 
     public static final String MODID = "EnderIO";
     public static final String DOMAIN = MODID.toLowerCase(Locale.US);
-    public static final String MOD_NAME = "Ender IO";
+    public static final String MOD_NAME = "Endless IO";
     public static final String VERSION = "GRADLETOKEN_VERSION";
 
     @Instance(MODID)
@@ -507,6 +473,9 @@ public class EnderIO {
         FMLInterModComms.sendMessage("Waila", "register", "crazypants.enderio.waila.WailaCompat.load");
 
         MaterialRecipes.registerOresInDictionary();
+
+        SimplyJetpacks.preInit(event);
+        RFDrills.preInit(event);
     }
 
     private void registerFluids() {
@@ -710,6 +679,8 @@ public class EnderIO {
         EE3Util.registerMiscRecipes();
 
         proxy.load();
+        SimplyJetpacks.init(event);
+        RFDrills.init(event);
     }
 
     @EventHandler
@@ -761,6 +732,8 @@ public class EnderIO {
         // Register villagers
         FMLInterModComms.sendMessage("EnderStructures", "addResourcePath", "/assets/enderio/villagers");
         FMLInterModComms.sendMessage("EnderStructures", "registerVillageGenerator", "enderioMobDropVillager");
+
+        RFDrills.postInit(event);
     }
 
     @EventHandler
@@ -866,6 +839,11 @@ public class EnderIO {
     public void serverStarted(FMLServerStartedEvent event) {
         HyperCubeRegister.load();
         ServerChannelRegister.load();
+    }
+
+    @EventHandler
+    public static void serverStopping(FMLServerStoppingEvent evt) {
+        SyncHandler.clearAll();
     }
 
     @SubscribeEvent

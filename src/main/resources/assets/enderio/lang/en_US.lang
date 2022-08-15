@@ -1395,3 +1395,280 @@ enderio.tooltip.meta=Meta:
 enderio.tooltip.uid=UID:
 enderio.tooltip.anvilupgrades=Anvil Upgrades:
 enderio.waila.config.hiddenfacades=Sneaky Facades
+
+#Drills
+item.enderio:basic_drill.name=Basic Mining Drill
+item.enderio:advanced_drill.name=Advanced Mining Drill
+
+item.enderio:soul_crusher.name=Dark Soularium Crusher
+item.enderio:flux_hoe.name=Flux Hoe
+
+item.enderio:basic_chainsaw.name=Basic Chainsaw
+item.enderio:advanced_chainsaw.name=Advanced Chainsaw
+
+item.enderio:basic_motor.name=Basic Motor
+item.enderio:advanced_motor.name=Advanced Motor
+
+item.enderio:resonating_crystal.name=Resonating Crystal
+item.enderio:destructive_crystal.name=Destructive Crystal
+item.enderio:earthshaking_crystal.name=Earthshaking Crystal
+item.enderio:soularium_nugget.name=Soularium Nugget
+item.enderio:dark_soularium.name=Dark Soularium
+item.enderio:dark_soularium_nugget.name=Dark Soularium Nugget
+
+enderio.hoe.tooltip=§aAlso serves as a sickle.
+enderio.drill.tooltip=§aServes as a pick and a shovel.
+enderio.chainsaw.tooltip=§aAlso serves as shears.
+enderio.crusher.tooltip=§aServes as a pick, a shovel and an axe.
+enderio.energy_per_block.tooltip=Energy per block: %s RF
+enderio.can_break.tooltip=§cWill break when it runs out of energy.
+enderio.chainsaw_has_modes.tooltip=§b§oPress %s to toggle shears mode.
+enderio.drill_has_modes.tooltip=§b§oPress %s to switch mining modes.
+enderio.chainsaw_has_modes.sneak.tooltip=§b§oUse while sneaking to toggle shears mode.
+enderio.drill_has_modes.sneak.tooltip=§b§oUse while sneaking to switch mining modes.
+enderio.enchantable.tooltip=§aCan be enchanted.
+enderio.silent.tooltip=§aMuffled mode switching sound.
+enderio.replacement.tooltip1=%s is not installed.
+enderio.replacement.tooltip2=So instead, have this blatant rip-off
+enderio.replacement.tooltip3=of one of its items.
+
+enderio.soul_upgrade.tooltip=Upgrade for the Dark Soularium Crusher
+enderio.soul_upgrade.recipe=Anvil Recipes:
+
+enderio.upgrade.beast_mode=Beast Mode
+enderio.upgrade.beast_mode.recipe1=Destructive Crystal + 10 lvs
+enderio.upgrade.beast_mode.recipe2=Earthshaking Crystal + 10 lvs
+enderio.upgrade.beast_mode.desc1=Allows for 3x3x3 mining
+enderio.upgrade.beast_mode.desc2=Allows for 5x5x5 mining
+enderio.upgrade.beast_mode.desc1.fork=Allows for 3x3x3 mining/tilling
+enderio.upgrade.beast_mode.desc2.fork=Allows for 5x5x5 mining/tilling
+
+enderio.upgrade.empowered=Empowered
+enderio.upgrade.empowered.recipe1=Basic Capacitor + 10 lvs
+enderio.upgrade.empowered.recipe2=Double-Layer Capacitor + 10 lvs
+enderio.upgrade.empowered.recipe3=Octadic Capacitor + 10 lvs
+enderio.upgrade.empowered.desc1=Increases energy capacity
+enderio.upgrade.empowered.desc2=Unlocks other upgrades
+
+enderio.upgrade.fork=Fork
+enderio.upgrade.fork.recipe1=Diamond Hoe + 10 lvs
+enderio.upgrade.fork.desc1.1=Who needs a hoe
+enderio.upgrade.fork.desc1.2=when you have a fork?
+
+
+enderio.level.1=I
+enderio.level.2=II
+enderio.level.3=III
+
+
+enderio.shears_on.mode=Shears: §aOn
+enderio.shears_off.mode=Shears: §cOff
+enderio.5x5x5.mode=Mode: §a5x5x5
+enderio.3x3x3.mode=Mode: §e3x3x3
+enderio.1x3x1.mode=Mode: §e1x3x1
+enderio.1x1x1.mode=Mode: §c1x1x1
+
+config.general=General
+config.general.tooltip=Configure main gameplay settings
+config.drill_tier1=Drill Tier 1
+config.drill_tier1.tooltip=Configure properties of Tier 1 drills
+config.drill_tier2=Drill Tier 2
+config.drill_tier2.tooltip=Configure properties of Tier 2 drills
+config.drill_tier3=Drill Tier 3
+config.drill_tier3.tooltip=Configure properties of Tier 3 drills
+config.drill_tier4=Drill Tier 4
+config.drill_tier4.tooltip=Configure properties of Tier 4 drills
+config.soul_crusher=Dark Soularium Crusher
+config.soul_crusher.tooltip=Configure properties of the Dark Soularium Crusher
+config.hoe=Flux Hoe
+config.hoe.tooltip=Configure properties of the Flux Hoe
+config.chainsaw_tier1=Chainsaw Tier 1
+config.chainsaw_tier1.tooltip=Configure properties of Tier 1 chainsaws
+config.chainsaw_tier2=Chainsaw Tier 2
+config.chainsaw_tier2.tooltip=Configure properties of Tier 2 chainsaws
+config.chainsaw_tier3=Chainsaw Tier 3
+config.chainsaw_tier3.tooltip=Configure properties of Tier 3 chainsaws
+config.chainsaw_tier4=Chainsaw Tier 4
+config.chainsaw_tier4.tooltip=Configure properties of Tier 4 chainsaws
+
+config.maxEnergy=Maximum Energy
+config.maxEnergy.tooltip=The max amount of energy that the tool can hold
+config.energyPerBlock=Energy Per Block
+config.energyPerBlock.tooltip=The amount of energy that the tool uses to mine 1 block (uses twice as much energy for attacking)
+config.rechargeRate=Recharge Rate
+config.rechargeRate.tooltip=RF that the tool can recharge per tick
+config.canBreak=Can Break
+config.canBreak.tooltip=Can the tool break when it runs out of energy
+config.hasModes=Has Modes
+config.hasModes.tooltip=Can the tool change modes
+config.miningLevel=Mining Level
+config.miningLevel.tooltip=Mining level of the tool (1 - can mine iron, 2 - can mine diamonds etc.)
+config.efficiency=Efficiency
+config.efficiency.tooltip=Mining speed of the tool
+config.damage=Damage
+config.damage.tooltip=Damage that the tool does when attacking enemies
+config.enchant=Enchantibility
+config.enchant.tooltip=Enchantiblity of the tool (0 - not enchantable)
+
+config.integrateEIO=Enable EIO integration
+config.integrateEIO.tooltip=Set this to "false" to disable EnderIO integration
+config.shearsDefault=Shears default
+config.shearsDefault.tooltip=Set this to "false" to disable shears functionality for lower tier chainsaws
+config.modeSoundEIO=EIO Mode Switch Sound
+config.modeSoundEIO.tooltip=Set this to "true" to enable sound effects when switching modes with EnderIO tools.
+config.modeShiftClickEIO=EIO Mode Switch Shift+Click
+config.modeShiftClickEIO.tooltip=Set this to "false" to disable mode switching with a sneak-right click for EnderIO tools (it will use the CoFH Empower key)
+config.animationType=Mining Animation Type
+config.animationType.tooltip=Change the Drill/Chainsaw mining animation (0 = normal "swinging animation", 1 = "bow animation" in 3rd person only, 2 = "bow animation" in 1st and 3rd person")
+
+option.enderio.waila_rf=Show RF usage
+option.enderio.waila_rf.sneakingonly=Sneak only: Show RF usage
+option.enderio.waila_mode=Show mining mode
+option.enderio.waila_mode.sneakingonly=Sneak only: Show mining mode
+
+#Jetpacks
+item.EnderIO.jetpack.0.name=Tuberous Jetpack
+item.EnderIO.jetpack.1.eio.name=Conductive Iron Jetpack
+item.EnderIO.jetpack.2.eio.name=Electrical Steel Jetpack
+item.EnderIO.jetpack.3.eio.name=Energetic Jetpack
+item.EnderIO.jetpack.4.eio.name=Vibrant Jetpack
+item.EnderIO.jetpack.5.eio.name=Dark Soularium JetPlate
+item.EnderIO.jetpack.1.armored.eio.name=Conductive Iron Jetpack (Armored)
+item.EnderIO.jetpack.2.armored.eio.name=Electrical Steel Jetpack (Armored)
+item.EnderIO.jetpack.3.armored.eio.name=Energetic Jetpack (Armored)
+item.EnderIO.jetpack.4.armored.eio.name=Vibrant Jetpack (Armored)
+item.EnderIO.fluxpack.1.eio.name=Basic Capacitor Pack
+item.EnderIO.fluxpack.2.eio.name=Double-Layer Capacitor Pack
+item.EnderIO.fluxpack.3.eio.name=Quadruple-Layer Capacitor Pack
+item.EnderIO.fluxpack.4.eio.name=Octadic Capacitor Pack
+item.EnderIO.fluxpack.1.armored.eio.name=Basic Capacitor Pack (Armored)
+item.EnderIO.fluxpack.2.armored.eio.name=Double-Layer Capacitor Pack (Armored)
+item.EnderIO.fluxpack.3.armored.eio.name=Quadruple-Layer Capacitor Pack (Armored)
+item.EnderIO.fluxpack.4.armored.eio.name=Octadic Capacitor Pack (Armored)
+item.EnderIO.leatherStrap.name=Leather Strap
+item.EnderIO.thruster.eio.1.name=Conductive Iron Thruster
+item.EnderIO.thruster.eio.2.name=Electrical Steel Thruster
+item.EnderIO.thruster.eio.3.name=Energetic Thruster
+item.EnderIO.thruster.eio.4.name=Vibrant Thruster
+item.EnderIO.thruster.eio.5.name=Dark Soularium Thruster
+item.EnderIO.ingotDarkSoularium.name=Dark Soularium Ingot
+item.EnderIO.reinforcedGliderWing.name=Reinforced Glider Wing
+item.EnderIO.unitFlightControl.empty.name=Flight Control Unit (Empty)
+item.EnderIO.unitFlightControl.name=Flight Control Unit
+item.EnderIO.armorPlating.eio.1.name=Silicon Armor Plating
+item.EnderIO.armorPlating.eio.2.name=Conductive Iron Armor Plating
+item.EnderIO.armorPlating.eio.3.name=Electrical Steel Armor Plating
+item.EnderIO.armorPlating.eio.4.name=Dark Steel Armor Plating
+item.EnderIO.particle.0.name=Particle Customizer (Default)
+item.EnderIO.particle.1.name=Particle Customizer (None)
+item.EnderIO.particle.2.name=Particle Customizer (Smoke Only)
+item.EnderIO.particle.3.name=Particle Customizer (Rainbow Smoke)
+item.EnderIO.jetpackFueller.name=Jetpack Fueller
+item.EnderIO.mysteriousPotato.name=Mysterious Potato
+
+EnderIO.chat.enabled=enabled
+EnderIO.chat.disabled=disabled
+EnderIO.chat.jetpack.on=Jetpack engine
+EnderIO.chat.jetpack.hoverMode.on=Hover Mode
+EnderIO.chat.jetpack.emergencyHoverMode.on=Emergency Hover Mode
+EnderIO.chat.jetpack.emergencyHoverMode.msg=User is about to die! Activating hover mode
+EnderIO.chat.jetpack.jetplate.charger.on=JetPlate charger
+EnderIO.chat.fluxpack.on=Flux Pack charger
+
+EnderIO.tooltip.holdShift=Hold %s for Details
+EnderIO.tooltip.holdShift.shift=Shift
+
+EnderIO.tooltip.on=On
+EnderIO.tooltip.off=Off
+EnderIO.tooltip.enabled=Enabled
+EnderIO.tooltip.disabled=Disabled
+EnderIO.tooltip.yes=Yes
+EnderIO.tooltip.no=No
+EnderIO.tooltip.energy.none=None
+EnderIO.tooltip.state=State
+EnderIO.tooltip.tier=Tier %d
+EnderIO.tooltip.fuel.infinite.energy=1.21G / 1.21G RF
+EnderIO.tooltip.fuel.infinite.fluid=Infinite Fluid
+EnderIO.tooltip.fuelFluid=Fuel fluid
+EnderIO.tooltip.fuelUsage=Fuel usage
+EnderIO.tooltip.chargerRate=Charger rate
+EnderIO.tooltip.energySend=Send
+EnderIO.tooltip.energyReceive=Receive
+EnderIO.tooltip.hoverMode=Hover Mode
+EnderIO.tooltip.chargerState=Charger
+EnderIO.tooltip.particles=Particles
+EnderIO.tooltip.particles.0=Default
+EnderIO.tooltip.particles.1=None
+EnderIO.tooltip.particles.2=Smoke Only
+EnderIO.tooltip.particles.3=Rainbow Smoke
+EnderIO.tooltip.packGUIKey=Press %s while wearing to open GUI.
+EnderIO.tooltip.jetpack.description.1=Allows flight when active.
+EnderIO.tooltip.jetpack.description.2=Must be worn as a chestplate.
+EnderIO.tooltip.jetpackPotato.warning=Clever! But not survivable.
+EnderIO.tooltip.fluxpack.description.1=Charges armor and held items when active.
+EnderIO.tooltip.fluxpack.description.2=Must be worn as a chestplate.
+EnderIO.tooltip.jetplate.description.1=Allows flight and can charge items when active.
+EnderIO.tooltip.jetplate.description.2=Must be worn as a chestplate.
+EnderIO.tooltip.jetplate.dank="JetPlates can't melt Dark Steel beams!"
+EnderIO.tooltip.particleCustomizers.description.1=Used to customize a jetpack's particles.
+EnderIO.tooltip.particleCustomizers.description.2=Craft with a jetpack to apply.
+EnderIO.tooltip.jetpackFueller.description.1=Fuels worn jetpacks by pulling fuel
+EnderIO.tooltip.jetpackFueller.description.2=from blocks in the world.
+EnderIO.tooltip.jetpackFueller.description.3=Use on blocks to pull fuel.
+EnderIO.tooltip.mysteriousPotato.description=Can do the thing
+
+EnderIO.gui.hud.jetpack.fuel=Jetpack fuel
+EnderIO.gui.hud.fluxpack.fuel=Flux Pack energy
+EnderIO.gui.hud.fuel.depleted=Depleted
+EnderIO.gui.hud.state.engine=Engine
+EnderIO.gui.hud.state.hover=Hover
+EnderIO.gui.hud.state.charger=Charger
+EnderIO.gui.nei.recipe.armoring=Armoring
+EnderIO.gui.nei.recipe.armoring.input=in your hand
+EnderIO.gui.nei.recipe.armoring.plating=in your inventory
+EnderIO.gui.nei.recipe.armoring.output=after using while sneaking
+EnderIO.gui.nei.recipe.dearmoring.input=in your hand
+EnderIO.gui.nei.recipe.dearmoring.output=after using while sneaking
+EnderIO.gui.nei.recipe.dearmoring.plating=will be returned
+EnderIO.gui.jetpack.button.toggle.primary=Toggle engine
+EnderIO.gui.jetpack.button.toggle.secondary=Toggle charger
+EnderIO.gui.jetpack.button.mode.primary=Toggle Hover Mode
+EnderIO.gui.jetpack.button.mode.secondary=Toggle Emergency Hover Mode
+EnderIO.gui.fluxpack.button.toggle.primary=Toggle charger
+EnderIO.enchantment.fuelEfficiency=Fuel Efficiency
+
+death.attack.jetpackpotato=%1$s attempted to fly a potato
+death.attack.jetpackpotato.player=%1$s attempted to fly a potato
+death.attack.jetpackpotato.item=%1$s attempted to fly a potato
+death.attack.jetpackexplode=%1$s spontaneously detonated
+death.attack.jetpackexplode.player=%1$s spontaneously detonated
+death.attack.jetpackexplode.item=%1$s spontaneously detonated
+
+EnderIO.command.switch.neither=No jetpack or charger equipped.
+EnderIO.command.switch.noJetpack=No jetpack equipped.
+EnderIO.command.switch.noEmergencyHover=Jetpack does not support emergency hover mode.
+EnderIO.command.switch.noCharger=No charger equipped.
+EnderIO.keybind.toggle.primary=Toggle Engine / Flux Pack
+EnderIO.keybind.toggle.secondary=Toggle JetPlate Charger
+EnderIO.keybind.mode.primary=Toggle Hover Mode
+EnderIO.keybind.mode.secondary=Toggle Emergency Hover Mode
+EnderIO.keybind.openPackGUI=Open Pack GUI
+EnderIO.config.title=Simply Jetpacks Configuration
+EnderIO.config.item=Item Settings
+EnderIO.config.integration=Integration Settings
+EnderIO.config.integration.tooltip=Turn integration with other mods on or off. Note that integrations for different mods are not explicitly balanced around each other!
+EnderIO.config.controls=Controls Settings
+EnderIO.config.crafting=Crafting Settings
+EnderIO.config.aesthetics=Aesthetics Settings
+EnderIO.config.gui=GUI Settings
+EnderIO.config.sounds=Sound Settings
+EnderIO.config.tuning.jetpackPotato=Tuning - Tuberous Jetpack
+EnderIO.config.tuning.jetpackEIO1=Tuning - Conductive Iron Jetpack (EIO 1)
+EnderIO.config.tuning.jetpackEIO2=Tuning - Electrical Steel Jetpack (EIO 2)
+EnderIO.config.tuning.jetpackEIO3=Tuning - Energetic Jetpack (EIO 3)
+EnderIO.config.tuning.jetpackEIO4=Tuning - Vibrant Jetpack (EIO 4)
+EnderIO.config.tuning.jetpackEIO5=Tuning - Dark Soularium JetPlate (EIO 5)
+EnderIO.config.tuning.fluxPackEIO1=Tuning - Basic Capacitor Pack (EIO 1)
+EnderIO.config.tuning.fluxPackEIO2=Tuning - Double-Layer Capacitor Pack (EIO 2)
+EnderIO.config.tuning.fluxPackEIO3=Tuning - Quadruple-Layer Capacitor Pack (EIO 3)
+EnderIO.config.tuning.fluxPackEIO4=Tuning - Octadic Capacitor Pack (EIO 4)

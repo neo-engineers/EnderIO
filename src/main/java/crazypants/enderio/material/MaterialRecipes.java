@@ -35,11 +35,26 @@ public class MaterialRecipes {
             }
         }
 
-      if(Loader.isModLoaded("etfuturum")){
-        OreDictionary.registerOre("totemicItem", GameRegistry.findItem("etfuturum", "totem_of_undying"));
-      }else{
-        OreDictionary.registerOre("totemicItem", new ItemStack(Items.golden_apple, 1, 1));
-      }
+        OreDictionary.registerOre(
+                "totemicItem",
+                Loader.isModLoaded("etfuturum")
+                        ? new ItemStack(GameRegistry.findItem("etfuturum", "totem_of_undying"))
+                        : new ItemStack(Items.golden_apple, 1, 1));
+        OreDictionary.registerOre(
+                "poppedItem",
+                Loader.isModLoaded("etfuturum")
+                        ? GameRegistry.findItem("etfuturum", "chorus_fruit_popped")
+                        : Items.ender_eye);
+        OreDictionary.registerOre(
+                "priscrysItem",
+                Loader.isModLoaded("etfuturum")
+                        ? new ItemStack(GameRegistry.findItem("etfuturum", "prismarine_crystals"))
+                        : new ItemStack(EnderIO.itemMaterial, 1, PULSATING_CYSTAL.ordinal()));
+        OreDictionary.registerOre(
+                "prishardItem",
+                Loader.isModLoaded("etfuturum")
+                        ? GameRegistry.findItem("etfuturum", "prismarine_shard")
+                        : Items.diamond);
     }
 
     public static void registerOresInDictionary() {
@@ -166,219 +181,116 @@ public class MaterialRecipes {
         String capacitorMelodic = Capacitors.MELODIC_CAPACITOR.getOreTag();
 
         String ingotCopper =
-          (OreDictionary.doesOreNameExist("ingotCopper") || Loader.isModLoaded("etfuturum")) && Config.useModMetals ? "ingotCopper" : "ingotIron";
+                (OreDictionary.doesOreNameExist("ingotCopper")) && Config.useModMetals ? "ingotCopper" : "ingotIron";
 
         // Capacitors
-        if (Config.useHardRecipes) {
-            addShaped(
-                    BASIC_CAPACITOR.getItemStack(),
-                    " gr",
-                    "gig",
-                    "rg ",
-                    'r',
-                    "dustRedstone",
-                    'g',
-                    "ingotGold",
-                    'i',
-                    ingotCopper);
-            addShaped(
-                    ACTIVATED_CAPACITOR.getItemStack(),
-                    "iii",
-                    "cCc",
-                    "iii",
-                    'i',
-                    energeticAlloy,
-                    'c',
-                    BASIC_CAPACITOR.getItemStack(),
-                    'C',
-                    "dustCoal");
-            addShaped(
-                    ENDER_CAPACITOR.getItemStack(),
-                    "iii",
-                    "cCc",
-                    "iii",
-                    'i',
-                    phasedGold,
-                    'c',
-                    ACTIVATED_CAPACITOR.getItemStack(),
-                    'C',
-                    "glowstone");
+        addShaped(
+                BASIC_CAPACITOR.getItemStack(),
+                " gr",
+                "gig",
+                "rg ",
+                'r',
+                "dustRedstone",
+                'g',
+                "ingotGold",
+                'i',
+                ingotCopper);
+        addShaped(
+                ACTIVATED_CAPACITOR.getItemStack(),
+                "iii",
+                "cCc",
+                "iii",
+                'i',
+                energeticAlloy,
+                'c',
+                BASIC_CAPACITOR.getItemStack(),
+                'C',
+                "dustCoal");
+        addShaped(
+                ENDER_CAPACITOR.getItemStack(),
+                "iii",
+                "cCc",
+                "iii",
+                'i',
+                phasedGold,
+                'c',
+                ACTIVATED_CAPACITOR.getItemStack(),
+                'C',
+                "glowstone");
 
-            String prismarine =
-                    OreDictionary.doesOreNameExist("shardPrismarine") ? "shardPrismarine" : "itemPulsatingCrystal";
-            addShaped(
-                    CRYSTALLINE_CAPACITOR.getItemStack(),
-                    "iii",
-                    "cCc",
-                    "iii",
-                    'i',
-                    crystallineAlloy,
-                    'c',
-                    capacitorEnder,
-                    'C',
-                    prismarine);
-            addShaped(
-                    MELODIC_CAPACITOR.getItemStack(),
-                    "iii",
-                    "cCc",
-                    "iii",
-                    'i',
-                    melodicAlloy,
-                    'c',
-                    CRYSTALLINE_CAPACITOR.getItemStack(),
-                    'C',
-                    endSteel);
-            addShaped(
-                    STELLAR_CAPACITOR.getItemStack(),
-                    "iii",
-                    "cCc",
-                    "iii",
-                    'i',
-                    stellarAlloy,
-                    'c',
-                    MELODIC_CAPACITOR.getItemStack(),
-                    'C',
-                    PRECIENT_CRYSTAL.oreDict);
+        String prismarine =
+                OreDictionary.doesOreNameExist("crystalPrismarine") ? "crystalPrismarine" : "itemPulsatingCrystal";
+        addShaped(
+                CRYSTALLINE_CAPACITOR.getItemStack(),
+                "iii",
+                "cCc",
+                "iii",
+                'i',
+                crystallineAlloy,
+                'c',
+                capacitorEnder,
+                'C',
+                prismarine);
+        addShaped(
+                MELODIC_CAPACITOR.getItemStack(),
+                "iii",
+                "cCc",
+                "iii",
+                'i',
+                melodicAlloy,
+                'c',
+                CRYSTALLINE_CAPACITOR.getItemStack(),
+                'C',
+                endSteel);
+        ItemStack shulkerItem = Loader.isModLoaded("etfuturum")
+                ? new ItemStack(GameRegistry.findItem("etfuturum", "shulker_shell"))
+                : new ItemStack(EnderIO.itemMaterial, 1, PRECIENT_CRYSTAL.ordinal());
 
-            addShaped(
-                    SILVER_CAPACITOR.getItemStack(),
-                    " sr",
-                    "sis",
-                    "rs ",
-                    'r',
-                    "dustRedstone",
-                    's',
-                    "ingotSilver",
-                    'i',
-                    "ingotLead");
-            addShaped(
-                    ENDERGETIC_CAPACITOR.getItemStack(),
-                    "iii",
-                    "cCc",
-                    "iii",
-                    'i',
-                    energeticSilver,
-                    'c',
-                    SILVER_CAPACITOR.getItemStack(),
-                    'C',
-                    "dustCoal");
-            addShaped(
-                    ENDERGISED_CAPACITOR.getItemStack(),
-                    "iii",
-                    "cCc",
-                    "iii",
-                    'i',
-                    vividAlloy,
-                    'c',
-                    ENDERGETIC_CAPACITOR.getItemStack(),
-                    'C',
-                    "glowstone");
+        addShaped(
+                STELLAR_CAPACITOR.getItemStack(),
+                " i ",
+                "cCc",
+                " i ",
+                'i',
+                stellarAlloy,
+                'c',
+                MELODIC_CAPACITOR.getItemStack(),
+                'C',
+                shulkerItem);
 
-        } else {
-            addShaped(
-                    BASIC_CAPACITOR.getItemStack(),
-                    " gr",
-                    "gig",
-                    "rg ",
-                    'r',
-                    "dustRedstone",
-                    'g',
-                    "ingotGold",
-                    'i',
-                    ingotCopper);
-            addShaped(
-                    ACTIVATED_CAPACITOR.getItemStack(),
-                    " i ",
-                    "cCc",
-                    " i ",
-                    'i',
-                    energeticAlloy,
-                    'c',
-                    BASIC_CAPACITOR.getItemStack(),
-                    'C',
-                    "dustCoal");
-            addShaped(
-                    ENDER_CAPACITOR.getItemStack(),
-                    " i ",
-                    "cCc",
-                    " i ",
-                    'i',
-                    phasedGold,
-                    'c',
-                    ACTIVATED_CAPACITOR.getItemStack(),
-                    'C',
-                    "glowstone");
-
-            String prismarine =
-                    OreDictionary.doesOreNameExist("shardPrismarine") ? "shardPrismarine" : "itemPulsatingCrystal";
-            addShaped(
-                    CRYSTALLINE_CAPACITOR.getItemStack(),
-                    " i ",
-                    "cCc",
-                    " i ",
-                    'i',
-                    crystallineAlloy,
-                    'c',
-                    capacitorEnder,
-                    'C',
-                    prismarine);
-            addShaped(
-                    MELODIC_CAPACITOR.getItemStack(),
-                    " i ",
-                    "cCc",
-                    " i ",
-                    'i',
-                    melodicAlloy,
-                    'c',
-                    CRYSTALLINE_CAPACITOR.getItemStack(),
-                    'C',
-                    endSteel);
-            addShaped(
-                    STELLAR_CAPACITOR.getItemStack(),
-                    " i ",
-                    "cCc",
-                    " i ",
-                    'i',
-                    stellarAlloy,
-                    'c',
-                    MELODIC_CAPACITOR.getItemStack(),
-                    'C',
-                    PRECIENT_CRYSTAL.oreDict);
-
-            addShaped(
-                    SILVER_CAPACITOR.getItemStack(),
-                    " sr",
-                    "sis",
-                    "rs ",
-                    'r',
-                    "dustRedstone",
-                    's',
-                    "ingotSilver",
-                    'i',
-                    "ingotLead");
-            addShaped(
-                    ENDERGETIC_CAPACITOR.getItemStack(),
-                    " i ",
-                    "cCc",
-                    " i ",
-                    'i',
-                    energeticSilver,
-                    'c',
-                    SILVER_CAPACITOR.getItemStack(),
-                    'C',
-                    "dustCoal");
-            addShaped(
-                    ENDERGISED_CAPACITOR.getItemStack(),
-                    " i ",
-                    "cCc",
-                    " i ",
-                    'i',
-                    vividAlloy,
-                    'c',
-                    ENDERGETIC_CAPACITOR.getItemStack(),
-                    'C',
-                    "glowstone");
-        }
+        addShaped(
+                SILVER_CAPACITOR.getItemStack(),
+                " sr",
+                "sis",
+                "rs ",
+                'r',
+                "dustRedstone",
+                's',
+                "ingotSilver",
+                'i',
+                "ingotLead");
+        addShaped(
+                ENDERGETIC_CAPACITOR.getItemStack(),
+                "iii",
+                "cCc",
+                "iii",
+                'i',
+                energeticSilver,
+                'c',
+                SILVER_CAPACITOR.getItemStack(),
+                'C',
+                "dustCoal");
+        addShaped(
+                ENDERGISED_CAPACITOR.getItemStack(),
+                "iii",
+                "cCc",
+                "iii",
+                'i',
+                vividAlloy,
+                'c',
+                ENDERGETIC_CAPACITOR.getItemStack(),
+                'C',
+                "glowstone");
 
         // Conduit Binder
         ItemStack cbc = BINDER_COMPOSITE.getStack(8);
@@ -533,7 +445,7 @@ public class MaterialRecipes {
         ItemStack enderios = EnderFood.ENDERIOS.getStack();
         addShapeless(enderios, Items.bowl, Items.milk_bucket, "cropWheat", "dustEnderPearl");
 
-        if (hasCopper() || Loader.isModLoaded("etfuturum")) {
+        if (hasCopper()) {
             ItemStack dustCopper = new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_COPPER.ordinal());
             ItemStack ingotCoppper = OreDictionaryPreferences.instance.getPreferred(OreDictionaryHelper.INGOT_COPPER);
             GameRegistry.addSmelting(dustCopper, ingotCoppper, 0);
@@ -544,15 +456,24 @@ public class MaterialRecipes {
             GameRegistry.addSmelting(dustTin, ingotTin, 0);
         }
         if (OreDictionary.getOres("ingotSteel").isEmpty()) {
-          ItemStack dustDarkSteel = new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_DARK_STEEL.ordinal());
-          ItemStack dustElectricalSteel = new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_ELECTRICAL_STEEL.ordinal());
-          ItemStack ingotDarkSteel = new ItemStack(EnderIO.itemAlloy, 1, Alloy.DARK_STEEL.ordinal());
-          ItemStack ingotElectricalSteel = new ItemStack(EnderIO.itemAlloy, 1, Alloy.ELECTRICAL_STEEL.ordinal());
+            ItemStack dustDarkSteel =
+                    new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_DARK_STEEL.ordinal());
+            ItemStack dustElectricalSteel =
+                    new ItemStack(EnderIO.itemPowderIngot, 1, PowderIngot.POWDER_ELECTRICAL_STEEL.ordinal());
+            ItemStack ingotDarkSteel = new ItemStack(EnderIO.itemAlloy, 1, Alloy.DARK_STEEL.ordinal());
+            ItemStack ingotElectricalSteel = new ItemStack(EnderIO.itemAlloy, 1, Alloy.ELECTRICAL_STEEL.ordinal());
 
-          addShapeless(dustDarkSteel, Items.iron_ingot, "dustCoal", "dustObsidian", "dustObsidian", "dustObsidian", "dustObsidian");
-          addShapeless(dustElectricalSteel, Items.iron_ingot, "dustCoal", "dustSilicon");
-          GameRegistry.addSmelting(dustDarkSteel, ingotDarkSteel, 0);
-          GameRegistry.addSmelting(dustElectricalSteel, ingotElectricalSteel, 0);
+            addShapeless(
+                    dustDarkSteel,
+                    Items.iron_ingot,
+                    "dustCoal",
+                    "dustObsidian",
+                    "dustObsidian",
+                    "dustObsidian",
+                    "dustObsidian");
+            addShapeless(dustElectricalSteel, Items.iron_ingot, "dustCoal", "dustSilicon");
+            GameRegistry.addSmelting(dustDarkSteel, ingotDarkSteel, 0);
+            GameRegistry.addSmelting(dustElectricalSteel, ingotElectricalSteel, 0);
         }
     }
 }
